@@ -49,5 +49,5 @@ public interface CompanyService {
 	 * @param id company id.
 	 * @param owners owners to add.
 	 */
-	public void addOwners(String id, List<String> owners);
+	public void addOwners(long id, List<String> owners) throws ServiceException;
 }

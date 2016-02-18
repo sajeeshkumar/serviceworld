@@ -3,7 +3,8 @@
  */
 package net.sajeesh.samplerest.api.model;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Model class for Company domain data.
@@ -20,7 +21,7 @@ public class Company {
 	private String country;
 	private String email;
 	private String phoneNum;
-	private List<String> owners;
+	private Set<String> owners;
 	/**
 	 * @return the id
 	 */
@@ -108,13 +109,16 @@ public class Company {
 	/**
 	 * @return the owners
 	 */
-	public List<String> getOwners() {
+	public Set<String> getOwners() {
+		if(owners == null){
+			owners = new HashSet<String>();
+		}
 		return owners;
 	}
 	/**
 	 * @param owners the owners to set
 	 */
-	public void setOwners(List<String> owners) {
+	public void setOwners(Set<String> owners) {
 		this.owners = owners;
 	}
 	
