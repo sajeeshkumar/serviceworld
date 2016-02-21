@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js" ></script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="CompanyController">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Country</th>
+                </tr>
+                <tr ng-repeat = "company in companies">
+                    <td>{{company.name}}</td>
+                    <td>{{company.address}}</td>
+                    <td>{{company.city}}</td>
+                    <td>{{company.country}}</td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            angular.module("myapp",[]).controller("CompanyController", function($scope,$http){
+                  $http.get('https://gentle-ridge-88824.herokuapp.com/company').success(function(data){
+                     $scope.companies = data; 
+                  }).error(function(data){
+                      alert("Unable to get companies");
+                  });
+                        });
+        </script>
+    </body>
+</html>
