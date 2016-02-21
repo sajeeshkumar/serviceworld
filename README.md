@@ -44,3 +44,6 @@ curl -i -X POST -H "Content-Type : application/json" heroku-server-url/company/{
 
 eg; ``` curl -i -X POST -H "Content-Type : application/json" https://gentle-ridge-88824.herokuapp.com/company/1/owner -d '["owner3","owner4"]'  ```
 
+##### Angular JS client
+
+Launch test.html in a browser to view REST API calls to the heroku instance. The REST API calls are done using angularjs libraries.
